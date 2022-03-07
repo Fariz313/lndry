@@ -240,8 +240,8 @@
           aria-haspopup="true"
           aria-expanded="false"
         >
-          <span class="mr-2 d-none d-lg-inline text-gray-600 small"
-            >Douglas McGee</span
+          <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+            {{ this.$store.state.user.name || "loading info" }}</span
           >
           <img
             class="img-profile rounded-circle"
@@ -269,6 +269,7 @@
           <a
             class="dropdown-item"
             href="#"
+            @click="logout"
             data-toggle="modal"
             data-target="#logoutModal"
           >
@@ -280,3 +281,19 @@
     </ul>
   </nav>
 </template>
+<script>
+export default {
+  methods: {
+    logout() {
+      this.$store
+        .dispatch("logout")
+        .then((response) => {
+          location.href = "/";
+        })
+        .catch((err) => {
+          location.href = "/";
+        });
+    },
+  },
+};
+</script>

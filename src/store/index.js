@@ -36,14 +36,14 @@ export default new Vuex.Store({
 				commit('auth_request')
 				axios({ url: '/login', data: user, method: 'POST' })
 					.then(response => {
-						const token = response.data.token;
-						const logged = response.data.logged;
+						const token = response.data.data.token;
+						const logged = response.data.success;
 						localStorage.setItem('Authorization', token)
 						axios.defaults.headers.common['Authorization'] = "Bearer " + localStorage.getItem('Authorization');
 						commit('auth_success', token)
 						axios.get("/login/check")
 						.then(response => {
-							commit('userDetail', response.data.user)
+							commit('userDetail', response.data.data)
 						})
 						resolve(response)
 					})

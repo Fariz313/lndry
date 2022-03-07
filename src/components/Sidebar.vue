@@ -65,6 +65,34 @@
         class="nav-link collapsed"
         to="/Outlet"
         data-toggle="collapse"
+        data-target="#collapseUser"
+        aria-expanded="true"
+        aria-controls="collapseUser"
+      >
+        <i class="fas fa-fw fa-cog"></i>
+        <span>User</span>
+      </router-link>
+      <div
+        id="collapseUser"
+        class="collapse"
+        aria-labelledby="headingUser"
+        data-parent="#accordionSidebar"
+      >
+        <div class="bg-white py-2 collapse-inner rounded">
+          <router-link class="collapse-item" to="/member"
+            >User List</router-link
+          >
+          <router-link class="collapse-item" to="/member/create"
+            >Create User</router-link
+          >
+        </div>
+      </div>
+    </li>
+    <li class="nav-item">
+      <router-link
+        class="nav-link collapsed"
+        to="/Outlet"
+        data-toggle="collapse"
         data-target="#collapseMember"
         aria-expanded="true"
         aria-controls="collapseTwo"
@@ -121,17 +149,17 @@
         class="nav-link collapsed"
         to="/Outlet"
         data-toggle="collapse"
-        data-target="#collapseTwo"
+        data-target="#collapseTransaction"
         aria-expanded="true"
-        aria-controls="collapseTwo"
+        aria-controls="collapseTransaction"
       >
         <i class="fas fa-fw fa-cog"></i>
         <span>Transaction</span>
       </router-link>
       <div
-        id="collapseTwo"
+        id="collapseTransaction"
         class="collapse"
-        aria-labelledby="headingTwo"
+        aria-labelledby="headingTransaction"
         data-parent="#accordionSidebar"
       >
         <div class="bg-white py-2 collapse-inner rounded">

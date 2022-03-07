@@ -98,7 +98,7 @@ export default {
           this.alertMesage = "Login Berhasil";
           this.isAlertSuccess = true;
           this.showAlert = true;
-          console.log(this.isAlertSuccess);
+          this.$router.push('/')
         })
         .catch((err) => {
           this.alertMesage = "Login Gagal";
