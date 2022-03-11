@@ -11,7 +11,7 @@
     </button>
 
     <!-- Topbar Search -->
-    <form
+    <div
       class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search"
     >
       <div class="input-group">
@@ -28,7 +28,7 @@
           </button>
         </div>
       </div>
-    </form>
+    </div>
 
     <!-- Topbar Navbar -->
     <ul class="navbar-nav ml-auto">
@@ -50,7 +50,7 @@
           class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
           aria-labelledby="searchDropdown"
         >
-          <form class="form-inline mr-auto w-100 navbar-search">
+          <div class="form-inline mr-auto w-100 navbar-search">
             <div class="input-group">
               <input
                 type="text"
@@ -65,7 +65,7 @@
                 </button>
               </div>
             </div>
-          </form>
+          </div>
         </div>
       </li>
 
@@ -245,7 +245,7 @@
           >
           <img
             class="img-profile rounded-circle"
-            src="img/undraw_profile.svg"
+            src="/img/undraw_profile.svg"
           />
         </a>
         <!-- Dropdown - User Information -->

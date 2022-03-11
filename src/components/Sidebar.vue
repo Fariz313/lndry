@@ -27,127 +27,11 @@
 
     <!-- Divider -->
     <hr class="sidebar-divider" />
-
-    <!-- Heading -->
-    <div class="sidebar-heading">Master</div>
-
-    <!-- Nav Item - Pages Collapse Menu -->
+    <div class="sidebar-heading">Transactional</div>
     <li class="nav-item">
-      <router-link
+      <a
         class="nav-link collapsed"
-        to="/Outlet"
-        data-toggle="collapse"
-        data-target="#collapseTwo"
-        aria-expanded="true"
-        aria-controls="collapseTwo"
-      >
-        <i class="fas fa-fw fa-cog"></i>
-        <span>Outlet</span>
-      </router-link>
-      <div
-        id="collapseTwo"
-        class="collapse"
-        aria-labelledby="headingTwo"
-        data-parent="#accordionSidebar"
-      >
-        <div class="bg-white py-2 collapse-inner rounded">
-          <router-link class="collapse-item" to="/outlet"
-            >Outlet List</router-link
-          >
-          <router-link class="collapse-item" to="/outlet/create"
-            >Create Outlet</router-link
-          >
-        </div>
-      </div>
-    </li>
-    <li class="nav-item">
-      <router-link
-        class="nav-link collapsed"
-        to="/Outlet"
-        data-toggle="collapse"
-        data-target="#collapseUser"
-        aria-expanded="true"
-        aria-controls="collapseUser"
-      >
-        <i class="fas fa-fw fa-cog"></i>
-        <span>User</span>
-      </router-link>
-      <div
-        id="collapseUser"
-        class="collapse"
-        aria-labelledby="headingUser"
-        data-parent="#accordionSidebar"
-      >
-        <div class="bg-white py-2 collapse-inner rounded">
-          <router-link class="collapse-item" to="/member"
-            >User List</router-link
-          >
-          <router-link class="collapse-item" to="/member/create"
-            >Create User</router-link
-          >
-        </div>
-      </div>
-    </li>
-    <li class="nav-item">
-      <router-link
-        class="nav-link collapsed"
-        to="/Outlet"
-        data-toggle="collapse"
-        data-target="#collapseMember"
-        aria-expanded="true"
-        aria-controls="collapseTwo"
-      >
-        <i class="fas fa-fw fa-cog"></i>
-        <span>Member</span>
-      </router-link>
-      <div
-        id="collapseMember"
-        class="collapse"
-        aria-labelledby="headingTwo"
-        data-parent="#accordionSidebar"
-      >
-        <div class="bg-white py-2 collapse-inner rounded">
-          <router-link class="collapse-item" to="/member"
-            >Member List</router-link
-          >
-          <router-link class="collapse-item" to="/member/create"
-            >Create Member</router-link
-          >
-        </div>
-      </div>
-    </li>
-    <li class="nav-item">
-      <router-link
-        class="nav-link collapsed"
-        to="/Outlet"
-        data-toggle="collapse"
-        data-target="#collapsePaket"
-        aria-expanded="true"
-        aria-controls="collapseTwo"
-      >
-        <i class="fas fa-fw fa-cog"></i>
-        <span>Paket</span>
-      </router-link>
-      <div
-        id="collapsePaket"
-        class="collapse"
-        aria-labelledby="headingPaket"
-        data-parent="#accordionSidebar"
-      >
-        <div class="bg-white py-2 collapse-inner rounded">
-          <router-link class="collapse-item" to="/paket"
-            >Paket List</router-link
-          >
-          <router-link class="collapse-item" to="/paket/create"
-            >Create Paket</router-link
-          >
-        </div>
-      </div>
-    </li>
-    <li class="nav-item">
-      <router-link
-        class="nav-link collapsed"
-        to="/Outlet"
+        href="#"
         data-toggle="collapse"
         data-target="#collapseTransaction"
         aria-expanded="true"
@@ -155,7 +39,7 @@
       >
         <i class="fas fa-fw fa-cog"></i>
         <span>Transaction</span>
-      </router-link>
+      </a>
       <div
         id="collapseTransaction"
         class="collapse"
@@ -163,15 +47,148 @@
         data-parent="#accordionSidebar"
       >
         <div class="bg-white py-2 collapse-inner rounded">
-          <router-link class="collapse-item" to="/transaction"
+          <router-link class="collapse-item" to="/transaksi"
             >Transaction List</router-link
           >
-          <router-link class="collapse-item" to="/transaction/create"
+          <router-link class="collapse-item" to="/transaksi/create"
             >Create Transaction</router-link
           >
         </div>
       </div>
     </li>
+    <div v-if="$store.getters.userDetail.role == 'admin'">
+      <!-- Heading -->
+      <div class="sidebar-heading">Master</div>
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a
+          class="nav-link collapsed"
+          href="#"
+          data-toggle="collapse"
+          data-target="#collapseTwo"
+          aria-expanded="true"
+          aria-controls="collapseTwo"
+        >
+          <i class="fas fa-fw fa-cog"></i>
+          <span>Outlet</span>
+        </a>
+        <div
+          id="collapseTwo"
+          class="collapse"
+          aria-labelledby="headingTwo"
+          data-parent="#accordionSidebar"
+        >
+          <div class="bg-white py-2 collapse-inner rounded">
+            <router-link class="collapse-item" to="/outlet"
+              >Outlet List</router-link
+            >
+            <router-link class="collapse-item" to="/outlet/create"
+              >Create Outlet</router-link
+            >
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link collapsed"
+          href="#"
+          data-toggle="collapse"
+          data-target="#collapseUser"
+          aria-expanded="true"
+          aria-controls="collapseUser"
+        >
+          <i class="fas fa-fw fa-cog"></i>
+          <span>User</span>
+        </a>
+        <div
+          id="collapseUser"
+          class="collapse"
+          aria-labelledby="headingUser"
+          data-parent="#accordionSidebar"
+        >
+          <div class="bg-white py-2 collapse-inner rounded">
+            <router-link class="collapse-item" to="/user"
+              >User List</router-link
+            >
+            <router-link class="collapse-item" to="/user/create"
+              >Create User</router-link
+            >
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link collapsed"
+          href="#"
+          data-toggle="collapse"
+          data-target="#collapseMember"
+          aria-expanded="true"
+          aria-controls="collapseTwo"
+        >
+          <i class="fas fa-fw fa-cog"></i>
+          <span>Member</span>
+        </a>
+        <div
+          id="collapseMember"
+          class="collapse"
+          aria-labelledby="headingTwo"
+          data-parent="#accordionSidebar"
+        >
+          <div class="bg-white py-2 collapse-inner rounded">
+            <router-link class="collapse-item" to="/member"
+              >Member List</router-link
+            >
+            <router-link class="collapse-item" to="/member/create"
+              >Create Member</router-link
+            >
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link collapsed"
+          href="/Outlet"
+          data-toggle="collapse"
+          data-target="#collapsePaket"
+          aria-expanded="true"
+          aria-controls="collapseTwo"
+        >
+          <i class="fas fa-fw fa-cog"></i>
+          <span>Paket</span>
+        </a>
+        <div
+          id="collapsePaket"
+          class="collapse"
+          aria-labelledby="headingPaket"
+          data-parent="#accordionSidebar"
+        >
+          <div class="bg-white py-2 collapse-inner rounded">
+            <router-link class="collapse-item" to="/paket"
+              >Paket List</router-link
+            >
+            <router-link class="collapse-item" to="/paket/create"
+              >Create Paket</router-link
+            >
+          </div>
+        </div>
+      </li>
+    </div>
+    <div
+      v-if="
+        $store.getters.userDetail.role == 'admin' ||
+        $store.getters.userDetail.role == 'owner'
+      "
+    >
+      <div class="sidebar-heading">Report</div>
+      <li class="nav-item">
+        <router-link
+          class="nav-link collapsed"
+          to="laporan"
+        >
+          <span>Print Laporan</span>
+        </router-link>
+      </li>
+    </div>
 
     <!-- Sidebar Toggler (Sidebar) -->
     <div class="text-center d-none d-md-inline">

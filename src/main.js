@@ -12,6 +12,7 @@ Vue.component("default-layout", Default);
 Vue.component("no-sidebar", NoSidebar);
 Vue.use(VueAxios, axios);
 axios.defaults.baseURL = "http://localhost:8000/api";
+window.$ = window.jQuery = require('jquery');
 new Vue({
   router,
   store,
