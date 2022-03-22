@@ -99,7 +99,8 @@ export default {
           name : this.name,
           username : this.username,
           password : this.password,
-          id_outlet : this.id_outlet
+          id_outlet : this.id_outlet,
+          role:'kasir'
       } 
       this.$store
         .dispatch("register", dataForm )

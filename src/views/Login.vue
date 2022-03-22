@@ -13,6 +13,21 @@
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                   </div>
+                  <div
+            class="alert alert-dismissible fade show"
+            v-if="showAlert"
+            role="alert"
+            :class="alertType"
+          >
+            {{alertMesage}}
+            <button
+              type="button"
+              class="close"
+              v-on:click="showAlert = !showAlert"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+                  </div>
                   <form @submit.prevent="submit" class="user">
                     <div class="form-group">
                       <input
@@ -21,7 +36,7 @@
                         class="form-control form-control-user"
                         id="exampleInputEmail"
                         aria-describedby="emailHelp"
-                        placeholder="Enter Email Address..."
+                        placeholder="Enter Username..."
                       />
                     </div>
                     <div class="form-group">
@@ -92,10 +107,10 @@ export default {
           this.alertMesage = "Login Berhasil";
           this.isAlertSuccess = true;
           this.showAlert = true;
-          this.$router.push('/')
+          this.$router.push("/");
         })
         .catch((err) => {
-          this.alertMesage = "Login Gagal";
+          this.alertMesage = "Username / Password Salah";
           this.isAlertSuccess = false;
           this.showAlert = true;
         });
