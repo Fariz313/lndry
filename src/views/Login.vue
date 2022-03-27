@@ -1,87 +1,65 @@
 <template>
-  <div class="container">
-    <!-- Outer Row -->
-    <div class="row justify-content-center">
-      <div class="col-xl-10 col-lg-12 col-md-9">
-        <div class="card o-hidden border-0 shadow-lg my-5">
-          <div class="card-body p-0">
-            <!-- Nested Row within Card Body -->
-            <div class="row">
-              <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
-              <div class="col-lg-6">
-                <div class="p-5">
-                  <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
-                  </div>
-                  <div
-            class="alert alert-dismissible fade show"
-            v-if="showAlert"
-            role="alert"
-            :class="alertType"
-          >
-            {{alertMesage}}
-            <button
-              type="button"
-              class="close"
-              v-on:click="showAlert = !showAlert"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-                  </div>
-                  <form @submit.prevent="submit" class="user">
-                    <div class="form-group">
-                      <input
-                        v-model="username"
-                        type="text"
-                        class="form-control form-control-user"
-                        id="exampleInputEmail"
-                        aria-describedby="emailHelp"
-                        placeholder="Enter Username..."
-                      />
-                    </div>
-                    <div class="form-group">
-                      <input
-                        v-model="password"
-                        type="password"
-                        class="form-control form-control-user"
-                        id="exampleInputPassword"
-                        placeholder="Password"
-                      />
-                    </div>
-                    <div class="form-group">
-                      <div class="custom-control custom-checkbox small">
-                        <input
-                          type="checkbox"
-                          class="custom-control-input"
-                          id="customCheck"
-                        />
-                        <label class="custom-control-label" for="customCheck"
-                          >Remember Me</label
-                        >
-                      </div>
-                    </div>
-                    <button
-                      type="submit"
-                      class="btn btn-primary btn-user btn-block"
-                    >
-                      Login
-                    </button>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+  <div class="container vh-100" style="position: relative">
+    <div class="card border-0 shadow absolute-center p-5">
+      <h3 class="py-5">Selamat Datang</h3>
+      <div
+        class="alert alert-dismissible fade show"
+        v-if="showAlert"
+        role="alert"
+        :class="alertType"
+      >
+        {{ alertMesage }}
+        <button
+          type="button"
+          class="btn-danger text-white close"
+          v-on:click="showAlert = !showAlert"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
+      <form @submit.prevent="submit" class="user">
+        <div class="form-group">
+          <input
+            v-model="username"
+            type="text"
+            class="form-control form-control-user"
+            id="exampleInputEmail"
+            aria-describedby="emailHelp"
+            placeholder="Enter Username..."
+          />
+        </div>
+        <div class="form-group">
+          <input
+            v-model="password"
+            type="password"
+            class="form-control form-control-user"
+            id="exampleInputPassword"
+            placeholder="Password"
+          />
+        </div>
+        <button :disabled="loading" type="submit" class="btn btn-primary btn-user btn-block">
+          Login
+        </button>
+      </form>
     </div>
   </div>
 </template>
+<style scoped>
+.absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  transform: translate(-50%, -50%);
+}
+</style>
 <script>
 export default {
   data() {
     return {
       username: "",
       password: "",
+      loading:false,
       isAlertSuccess: false,
       alertStatus: "",
       alertMesage: "",
@@ -98,6 +76,7 @@ export default {
   },
   methods: {
     submit() {
+      this.loading=true;
       let username = this.username;
       let password = this.password;
       this.$store
@@ -108,11 +87,14 @@ export default {
           this.isAlertSuccess = true;
           this.showAlert = true;
           this.$router.push("/");
+          
         })
         .catch((err) => {
           this.alertMesage = "Username / Password Salah";
           this.isAlertSuccess = false;
           this.showAlert = true;
+      this.loading=false;
+
         });
     },
   },

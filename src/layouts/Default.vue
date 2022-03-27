@@ -1,9 +1,10 @@
 <template>
-  <div id="wrapper">
+  <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+        data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+    <Navbar />
     <Sidebar />
     <div id="content-wrapper" class="d-flex flex-column">
       <div id="content">
-        <Navbar />
         <div class="container-fluid">
             <slot />
         </div>
