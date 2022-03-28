@@ -3,7 +3,7 @@
         data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
     <Navbar />
     <Sidebar />
-    <div id="content-wrapper" class="d-flex flex-column">
+    <div id="content-wrapper" class="page-wrapper">
       <div id="content">
         <div class="container-fluid">
             <slot />

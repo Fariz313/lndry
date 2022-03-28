@@ -29,11 +29,31 @@
           <li class="sidebar-item">
             <router-link
               class="sidebar-link waves-effect waves-dark sidebar-link"
+              to="/transaksi/create"
+              aria-expanded="false"
+            >
+              <i class="fa fa-table" aria-hidden="true"></i>
+              <span class="hide-menu">Create Transaksi</span>
+            </router-link>
+          </li>
+          <li class="sidebar-item">
+            <router-link
+              class="sidebar-link waves-effect waves-dark sidebar-link"
               to="/member"
               aria-expanded="false"
             >
               <i class="fa fa-table" aria-hidden="true"></i>
               <span class="hide-menu">Member</span>
+            </router-link>
+          </li>
+          <li class="sidebar-item">
+            <router-link
+              class="sidebar-link waves-effect waves-dark sidebar-link"
+              to="/member/create"
+              aria-expanded="false"
+            >
+              <i class="fa fa-table" aria-hidden="true"></i>
+              <span class="hide-menu">Create Member</span>
             </router-link>
           </li>
           <li class="sidebar-item">
@@ -49,11 +69,31 @@
           <li class="sidebar-item">
             <router-link
               class="sidebar-link waves-effect waves-dark sidebar-link"
+              to="/user/create"
+              aria-expanded="false"
+            >
+              <i class="fa fa-table" aria-hidden="true"></i>
+              <span class="hide-menu">Create User</span>
+            </router-link>
+          </li>
+          <li class="sidebar-item">
+            <router-link
+              class="sidebar-link waves-effect waves-dark sidebar-link"
               to="/paket"
               aria-expanded="false"
             >
               <i class="fa fa-table" aria-hidden="true"></i>
               <span class="hide-menu">Paket</span>
+            </router-link>
+          </li>
+          <li class="sidebar-item">
+            <router-link
+              class="sidebar-link waves-effect waves-dark sidebar-link"
+              to="/paket/create"
+              aria-expanded="false"
+            >
+              <i class="fa fa-table" aria-hidden="true"></i>
+              <span class="hide-menu">Craete Paket</span>
             </router-link>
           </li>
           <li class="sidebar-item">
@@ -66,6 +106,25 @@
               <span class="hide-menu">Outlet</span>
             </router-link>
           </li>
+          <li class="sidebar-item">
+            <router-link
+              class="sidebar-link waves-effect waves-dark sidebar-link"
+              to="/outlet"
+              aria-expanded="false"
+            >
+              <i class="fa fa-table" aria-hidden="true"></i>
+              <span class="hide-menu">Create Outlet</span>
+            </router-link>
+          </li>
+          <li class="sidebar-item">
+            <a
+              class="sidebar-link waves-effect waves-dark sidebar-link"
+              href="#"
+              aria-expanded="false"
+            >
+              <span @click="logout" class="hide-menu">Logout</span>
+            </a>
+          </li>
         </ul>
       </nav>
       <!-- End Sidebar navigation -->
@@ -73,3 +132,19 @@
     <!-- End Sidebar scroll-->
   </aside>
 </template>
+<script>
+export default {
+  methods: {
+    logout() {
+      this.$store
+        .dispatch("logout")
+        .then((response) => {
+          location.href = "/";
+        })
+        .catch((err) => {
+          location.href = "/";
+        });
+    },
+  },
+};
+</script>
