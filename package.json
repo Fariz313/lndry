@@ -12,6 +12,7 @@
     "datatables.net": "^1.11.5",
     "datatables.net-dt": "^1.11.5",
     "jquery": "^3.6.0",
+    "print-js": "^1.6.0",
     "register-service-worker": "^1.7.1",
     "vue": "^2.6.11",
     "vue-axios": "^3.4.1",
